@@ -103,5 +103,69 @@ kk_slider = Villager("K.K. Slider", "Dog", "Lazy", "dig it")
 isabelle.neighbor = tom_nook
 tom_nook.neighbor = kk_slider
 
-print(message_received(isabelle, kk_slider))
-print(message_received(kk_slider, isabelle))
+# print(message_received(isabelle, kk_slider))
+# print(message_received(kk_slider, isabelle))
+
+
+# ---------------------------- Problem 9 ------------------------------
+class Node:
+    def __init__(self, value, next=None):
+        self.value = value
+        self.next = next
+
+# Tom Nook --> Tommy
+tom_nook = Node("Tom Nook")
+tommy = Node("Tommy") 
+tom_nook.next = tommy 
+# print(tom_nook.value) 
+# print(tom_nook.next.value) 
+# print(tommy.value) 
+# print(tommy.next) 
+
+
+# ---------------------------- Problem 10 ------------------------------
+# Tom Nook --> Timmy --> Tommy
+timmy = Node("Timmy")
+tom_nook.next = timmy
+timmy.next = tommy
+# print(tom_nook.value)
+# print(tom_nook.next.value)
+# print(timmy.value)
+# print(timmy.next.value)
+# print(tommy.value)
+# print(tommy.next)
+
+
+# ---------------------------- Problem 11 ------------------------------
+# Timmy --> Tommy --> Saharah
+tom_nook.next = None
+timmy.next = tommy
+saharah = Node("Saharah")
+tommy.next = saharah
+print(tom_nook.next) 
+print(timmy.value) 
+print(timmy.next.value)  
+print(tommy.value) 
+print(tommy.next.value)
+print(saharah.value)  
+print(saharah.next) 
+
+
+# ---------------------------- Problem 12 ------------------------------
+# Output: Isabelle -> Saharah -> C.J.
+isabelle = Node("Isabelle")
+saharah = Node("Saharah")
+cj = Node("C.J.")
+
+isabelle.next = saharah
+saharah.next = cj
+
+def print_list(head):
+    values = []
+    current = head
+    while current:
+        values.append(str(current.value))
+        current = current.next
+    return "-> ".join(values)
+           
+print(print_list(isabelle))
