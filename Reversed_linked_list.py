@@ -1,3 +1,4 @@
+# -------------------- REVERSED LINKED LIST ------------------------
 """
 UNDERSTAND:
 - this is a singly linked list
@@ -52,7 +53,7 @@ Output:[2]
 
 
 
-# INSERT node into list
+# -------------------------------------- INSERT NODE ----------------------------------
 """
 Example 1: Insert in the middle
 Input:
@@ -91,7 +92,7 @@ def insert(head, value, position):
     return head
 
 
-# CREATE a linked list from a list
+# ----------------------------------- CREATE LINKED LIST FROM A LIST -----------------------------------
 """
 Example 1:
 
@@ -119,6 +120,27 @@ def create_linked_list(values):
         curr.next = new_node
         curr = new_node
     return head
+
+
+# ------------------------------------------ DELETE NODE ---------------------------------
+def delete_node(head, value):
+    if head is None:                                            # Handle empty Linked List
+        return None
+    
+    if head.data == value:                                      # Handle deletion of head node
+        return head.next
+    
+    curr = head         
+    while curr.next is not None:                                # Search for node to delete
+        if curr.next == value:
+            curr.next.data == curr.next.next                    # set the next node become the next next node, so skip one node
+            return head                                         # early return after deletion
+        curr = curr.next
+
+    return head                                                 # if value not found, reutrn the original LL
+
+
+
 
 
 """
