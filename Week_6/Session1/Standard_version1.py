@@ -198,3 +198,6 @@ song_audio = Node(5, Node(3, Node(1, Node(2, Node(5, Node(1, Node(2)))))))
 
 print(count_critical_points(song_audio))
 
+
+
+    
