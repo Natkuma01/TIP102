@@ -75,7 +75,6 @@ Output:
 10 -> 15 -> 20 -> None
 """
 def insert(head, value, position):
-    print(position, value)
     new_node = ListNode(value)
     
     if position == 0:
