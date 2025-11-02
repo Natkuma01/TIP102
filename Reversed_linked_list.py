@@ -75,20 +75,19 @@ Output:
 10 -> 15 -> 20 -> None
 """
 def insert(head, value, position):
-    new_node = ListNode(value)
-    
-    if position == 0:
+  new_node = ListNode(value)
+
+  if position == 0:
         new_node.next = head
         return new_node
     
-    current = head
-    for i in range (position-1):
+  current = head
+  for i in range (position-1):
         current = current.next
  
-    new_node.next = current.next
-    current.next = new_node
-    
-    return head
+  new_node.next = current.next
+  current.next = new_node
+  return head
 
 
 # ----------------------------------- CREATE LINKED LIST FROM A LIST -----------------------------------
