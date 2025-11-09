@@ -17,3 +17,11 @@ print(get_village_class_recursive(432))
 print(get_village_class_iterative(9))
 print(get_village_class_recursive(9))
 
+# Problem 2
+def count_walls(walls):
+    pass
+
+walls = ["outer", ["inner", ["keep", []]]]
+
+print(count_walls(walls))
+print(count_walls([]))
