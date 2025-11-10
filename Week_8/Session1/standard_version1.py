@@ -117,4 +117,3 @@ system_b = TreeNode("CaveA", None, TreeNode("CaveB", None, TreeNode("CaveC")))
 print(leftmost_path(system_a))
 print(leftmost_path(system_b))
 
-# Nice working eith 
