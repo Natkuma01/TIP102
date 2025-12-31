@@ -22,8 +22,9 @@ MATCH:
 PLAN:
 
 Example: 
-Input: [1 -> 2 -> 3 -> 4 -> 5]      
+Input: [1 -> 2 -> 3 -> 4 -> 5]  
 Output: [5 -> 4 -> 3 -> 2 -> 1]
+
 
 IMPLEMENT:
 """
@@ -34,8 +35,8 @@ def reverse_list(head):
     while curr:
         nxt = curr.next
         curr.next = prev
-        prev = curr
-        curr = nxt
+        prev = curr             # prev point to curr, not assign because this is linked list
+        curr = nxt                  # these 2 lines is doing:   prev --> curr --> nxt
     return prev
 
 
